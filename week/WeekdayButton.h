@@ -1,6 +1,9 @@
 #ifndef WEEKDAYBUTTON_H
 #define WEEKDAYBUTTON_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QAbstractButton>
 
 #include <QDate>

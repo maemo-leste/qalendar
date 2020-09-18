@@ -1,6 +1,9 @@
 #ifndef ROTATINGDIALOG_H
 #define ROTATINGDIALOG_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QDialog>
 
 #include <QGridLayout>

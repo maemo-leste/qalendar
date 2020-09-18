@@ -1,6 +1,9 @@
 #ifndef CALENDARDELEGATE_H
 #define CALENDARDELEGATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QStyledItemDelegate>
 #include <QPainter>
 

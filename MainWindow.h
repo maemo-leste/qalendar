@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMainWindow>
 
 #include <QMenu>

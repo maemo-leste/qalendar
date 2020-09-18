@@ -1,6 +1,9 @@
 #ifndef ALARMPICKSELECTOR_H
 #define ALARMPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QDateTime>
 #include <QMaemo5AbstractPickSelector>
 

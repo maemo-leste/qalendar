@@ -1,6 +1,9 @@
 #ifndef PLUG_H
 #define PLUG_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QWidget>
 
 #include "ChangeClient.h"

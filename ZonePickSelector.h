@@ -1,6 +1,9 @@
 #ifndef ZONEPICKSELECTOR_H
 #define ZONEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 class ZonePickSelector : public QMaemo5AbstractPickSelector

@@ -1,6 +1,9 @@
 #ifndef CALENDARPICKSELECTOR_H
 #define CALENDARPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 class CalendarPickSelector : public QMaemo5AbstractPickSelector

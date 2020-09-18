@@ -1,6 +1,9 @@
 #ifndef COMPONENTLISTWIDGET_H
 #define COMPONENTLISTWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QListWidget>
 
 #include <QDate>

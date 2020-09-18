@@ -1,6 +1,9 @@
 #ifndef RECURRENCEPICKSELECTOR_H
 #define RECURRENCEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 #include <CRecurrence.h>

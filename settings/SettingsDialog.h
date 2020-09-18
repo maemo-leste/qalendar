@@ -1,6 +1,9 @@
 #ifndef SETTINGSDIALOG_H
 #define SETTINGSDIALOG_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include "RotatingDialog.h"
 #include "ui_SettingsDialog.h"
 

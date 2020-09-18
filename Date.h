@@ -1,6 +1,10 @@
 #ifndef DATE_H
 #define DATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
+
 #include <QDate>
 #include <QDateTime>
 

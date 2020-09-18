@@ -1,6 +1,9 @@
 #ifndef DATEFORMATWIDGET_H
 #define DATEFORMATWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QWidget>
 #include <QLineEdit>
 #include <QLabel>

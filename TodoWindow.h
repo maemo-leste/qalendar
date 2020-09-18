@@ -1,6 +1,9 @@
 #ifndef TODOWINDOW_H
 #define TODOWINDOW_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include "ui_TodoWindow.h"
 
 #include <CTodo.h>

@@ -1,6 +1,9 @@
 #ifndef WEEKHINTWIDGET_H
 #define WEEKHINTWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QWidget>
 
 #include "WeekWidget.h"

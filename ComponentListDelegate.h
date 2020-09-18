@@ -1,6 +1,9 @@
 #ifndef COMPONENTLISTDELEGATE_H
 #define COMPONENTLISTDELEGATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <CComponent.h>
 
 #include <QStyledItemDelegate>

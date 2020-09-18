@@ -1,6 +1,9 @@
 #ifndef WEEKAREA_H
 #define WEEKAREA_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QScrollArea>
 
 #include "WeekWidget.h"

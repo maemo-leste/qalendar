@@ -1,6 +1,9 @@
 #ifndef BYWEEKDAYWIDGET_H
 #define BYWEEKDAYWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QFrame>
 
 #include <QHBoxLayout>

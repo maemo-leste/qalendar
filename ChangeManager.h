@@ -1,6 +1,9 @@
 #ifndef CHANGEMANAGER_H
 #define CHANGEMANAGER_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QWidget>
 
 #include <QTimer>

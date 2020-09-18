@@ -1,6 +1,9 @@
 #ifndef COLORCHECKDELEGATE_H
 #define COLORCHECKDELEGATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QStyledItemDelegate>
 #include <QPainter>
 

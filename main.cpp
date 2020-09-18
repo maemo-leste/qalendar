@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 **************************************************************************/
 
+#include "MainWindow.h"
+
 #include <QApplication>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
@@ -23,8 +25,6 @@
 #include <QDebug>
 
 #include <CMulticalendar.h>
-
-#include "MainWindow.h"
 
 #include "Date.h"
 #include "Theme.h"

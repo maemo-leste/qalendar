@@ -1,6 +1,9 @@
 #ifndef EVENTWINDOW_H
 #define EVENTWINDOW_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include "ui_EventWindow.h"
 
 #include "ChangeClient.h"

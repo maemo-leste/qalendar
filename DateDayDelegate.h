@@ -1,6 +1,9 @@
 #ifndef DATEDAYDELEGATE_H
 #define DATEDAYDELEGATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QStyledItemDelegate>
 #include <QPainter>
 #include <QMaemo5Style>

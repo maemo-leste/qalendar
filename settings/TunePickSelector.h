@@ -1,6 +1,9 @@
 #ifndef TUNEPICKSELECTOR_H
 #define TUNEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 class TunePickSelector : public QMaemo5AbstractPickSelector

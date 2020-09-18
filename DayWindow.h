@@ -1,6 +1,9 @@
 #ifndef DAYWINDOW_H
 #define DAYWINDOW_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include "ui_DayWindow.h"
 
 #include <QDate>

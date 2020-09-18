@@ -1,6 +1,9 @@
 #ifndef DATEPICKSELECTOR_H
 #define DATEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 #include <QDate>

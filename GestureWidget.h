@@ -1,6 +1,9 @@
 #ifndef GESTUREWIDGET_H
 #define GESTUREWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QWidget>
 
 #include <QMouseEvent>

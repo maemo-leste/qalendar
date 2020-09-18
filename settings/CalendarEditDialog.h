@@ -1,6 +1,9 @@
 #ifndef CALENDAREDITDIALOG_H
 #define CALENDAREDITDIALOG_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include "RotatingDialog.h"
 #include "ui_CalendarEditDialog.h"
 

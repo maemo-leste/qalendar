@@ -1,6 +1,9 @@
 #ifndef EXPANDINGLISTWIDGET_H
 #define EXPANDINGLISTWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QListWidget>
 
 class ExpandingListWidget : public QListWidget

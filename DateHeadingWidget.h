@@ -1,6 +1,10 @@
 #ifndef DATEHEADINGWIDGET_H
 #define DATEHEADINGWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
+
 #include <QWidget>
 #include <QMaemo5Style>
 #include <QPainter>

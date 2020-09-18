@@ -1,6 +1,9 @@
 #ifndef CWRAPPER_H
 #define CWRAPPER_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <algorithm>
 
 #include <QDate>

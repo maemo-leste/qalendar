@@ -1,6 +1,9 @@
 #ifndef TIMEPICKSELECTOR_H
 #define TIMEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 #include <QTime>

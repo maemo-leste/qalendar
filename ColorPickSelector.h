@@ -1,6 +1,9 @@
 #ifndef COLORPICKSELECTOR_H
 #define COLORPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 #include "ColorPickDialog.h"

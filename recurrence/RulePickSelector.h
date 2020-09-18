@@ -1,6 +1,9 @@
 #ifndef RULEPICKSELECTOR_H
 #define RULEPICKSELECTOR_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QMaemo5AbstractPickSelector>
 
 #include <vector>

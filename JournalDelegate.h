@@ -1,6 +1,10 @@
 #ifndef JOURNALDELEGATE_H
 #define JOURNALDELEGATE_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
+
 #include <CJournal.h>
 
 #include <QStyledItemDelegate>

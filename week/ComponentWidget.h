@@ -1,6 +1,9 @@
 #ifndef COMPONENTWIDGET_H
 #define COMPONENTWIDGET_H
 
+#include <glib.h>
+#include <gio/gio.h>
+
 #include <QAbstractButton>
 #include <QContextMenuEvent>
 

@@ -1,13 +1,13 @@
 #ifndef AGENDAPLUG_H
 #define AGENDAPLUG_H
 
+#include "TemporalPlug.h"
 #include "ui_AgendaPlug.h"
 
 #include <QDate>
 
 #include <CComponent.h>
 
-#include "TemporalPlug.h"
 
 class AgendaPlug : public TemporalPlug
 {
