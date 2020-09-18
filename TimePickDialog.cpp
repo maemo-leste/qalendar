@@ -1,7 +1,7 @@
 #include "TimePickDialog.h"
 
 #include <QScrollBar>
-#include <QAbstractKineticScroller>
+//#include <QAbstractKineticScroller>
 
 #include "ExpandingListWidget.h"
 

@@ -4,7 +4,7 @@
 #include <QDate>
 #include <QMaemo5Style>
 
-#include <QAbstractKineticScroller>
+//#include <QAbstractKineticScroller>
 #include <QScrollArea>
 #include <QScrollBar>
 
@@ -445,11 +445,13 @@ void WeekWidget::mouseReleaseEvent(QMouseEvent *e)
                                             - scrollArea->viewport()->height() / 2;
 
                 // Scroll to the position which is further away
+#if 0
                 scrollArea->property("kineticScroller").value<QAbstractKineticScroller*>()
                           ->scrollTo(QPoint(0, qBound(0, qAbs(scrollPosition-allDayPosition) > qAbs(scrollPosition-currentTimePosition)
                                                       ? allDayPosition
                                                       : currentTimePosition,
                                                       scrollBar->maximum())));
+#endif
             }
         }
     }

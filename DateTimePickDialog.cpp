@@ -2,7 +2,7 @@
 
 #include <QPushButton>
 #include <QScrollBar>
-#include <QAbstractKineticScroller>
+//#include <QAbstractKineticScroller>
 
 DateTimePickDialog::DateTimePickDialog(const QString &resetText, QWidget *parent) :
     RotatingDialog(parent),
@@ -83,8 +83,10 @@ void DateTimePickDialog::centerView(QListWidget *listWidget)
 {
     const int itemHeight = listWidget->visualItemRect(listWidget->item(0)).height();
 
+#if 0
     listWidget->property("kineticScroller").value<QAbstractKineticScroller*>()
               ->scrollTo(QPoint(0, qBound(0,
                                           row(listWidget) * itemHeight + (itemHeight - listWidget->height()) / 2,
                                           listWidget->verticalScrollBar()->maximum())));
+#endif
 }

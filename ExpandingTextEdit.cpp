@@ -1,7 +1,7 @@
 #include "ExpandingTextEdit.h"
 
 #include <QScrollArea>
-#include <QAbstractKineticScroller>
+//#include <QAbstractKineticScroller>
 
 ExpandingTextEdit::ExpandingTextEdit(QWidget *parent) :
     QTextEdit(parent),
@@ -123,9 +123,11 @@ void ExpandingTextEdit::adjust()
     for (QWidget *parent = this; parent && parent->parentWidget(); parent = parent->parentWidget()) {
         if (QScrollArea *scrollArea = qobject_cast<QScrollArea*>(parent->parentWidget())) {
             const QRect cursor = this->cursorRect();
+#if 0
             scrollArea->property("kineticScroller").value<QAbstractKineticScroller*>()
                         ->ensureVisible(this->mapTo(scrollArea->widget(), cursor.center()),
                                         0, cursor.height() * 18/10);
+#endif
             // NOTE: Every now and then the area is not scrolled by as much
             // as it should be. It's not much of an issue though, because
             // the next pressed key should trigger the scrolling again.
