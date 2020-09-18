@@ -98,7 +98,7 @@ QDateTime Date::toRemote(time_t t, const QString &zone)
 
     tm tm;
 
-    time_get_remote(t, zone.toAscii(), &tm);
+    time_get_remote(t, zone.toLatin1(), &tm);
 
     return QDateTime(QDate(tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday),
                      QTime(tm.tm_hour, tm.tm_min, tm.tm_sec));
@@ -124,7 +124,7 @@ time_t Date::toUtc(const QDateTime &t, const QString &zone)
 
     tm.tm_isdst = -1;
 
-    return time_mktime(&tm, zone.toAscii());
+    return time_mktime(&tm, zone.toLatin1());
 }
 
 QString Date::toString(const QDate &date, Format format)

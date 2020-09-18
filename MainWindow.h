@@ -82,7 +82,7 @@ private:
             // Get the calendar
             if (CCalendar *calendar = CMulticalendar::MCInstance()->getCalendarById(calendarId, error)) {
                 // Get the component
-                if (C *component = (calendar->*Getter)(componentId.toAscii().data(), error)) {
+                if (C *component = (calendar->*Getter)(componentId.toLatin1().data(), error)) {
                     // Fix up and display the component
                     component->setCalendarId(calendarId);
                     showComponent(component, topWindow);

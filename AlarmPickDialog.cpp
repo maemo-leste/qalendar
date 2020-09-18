@@ -1,6 +1,7 @@
 #include "AlarmPickDialog.h"
 
 #include <QPushButton>
+#include <QButtonGroup>
 
 #include <CAlarm.h>
 

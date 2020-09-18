@@ -4,6 +4,7 @@
 #include <map>
 
 #include <QPushButton>
+#include <QAction>
 #include <QScrollBar>
 
 #include <CMulticalendar.h>

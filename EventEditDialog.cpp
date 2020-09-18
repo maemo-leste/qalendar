@@ -290,7 +290,7 @@ void EventEditDialog::saveEvent()
         zone = zps->currentZone();
         event->setDateStart(Date::toUtc(from, zone));
         event->setDateEnd(Date::toUtc(to, zone));
-        event->setTzid(zone.toAscii().data());
+        event->setTzid(zone.toLatin1().data());
     } else {
         event->setDateStart(from.toTime_t());
         event->setDateEnd(to.toTime_t());

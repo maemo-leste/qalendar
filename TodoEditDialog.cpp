@@ -189,7 +189,7 @@ void TodoEditDialog::saveTodo()
     if (zps) {
         zone = zps->currentZone();
         todo->setDue(Date::toUtc(due, zone));
-        todo->setTzid(zone.toAscii().data());
+        todo->setTzid(zone.toLatin1().data());
     } else {
         todo->setDue(due.toTime_t());
     }

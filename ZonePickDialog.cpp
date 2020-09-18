@@ -34,7 +34,7 @@ ZonePickDialog::ZonePickDialog(QWidget *parent, const QString &zone) :
         const int namePos = zone.lastIndexOf('/');
         const QString name = zone.mid(namePos+1);
         const QString region = namePos > 0 ? zone.left(namePos) : QString();
-        const QString offset = displayOffset(time_get_utc_offset(z->toAscii()));
+        const QString offset = displayOffset(time_get_utc_offset(z->toLatin1()));
 
         QListWidgetItem *item = new QListWidgetItem();
         // Cram all details into one role for easy sorting with QListWidget,
@@ -80,7 +80,7 @@ QString ZonePickDialog::displayName(const QString &zone)
 
     return QString("%1 (GMT %2)")
            .arg(zone.startsWith(':') ? zone.mid(1).replace('_', ' ') : zone)
-           .arg(displayOffset(time_get_utc_offset(zone.toAscii())));
+           .arg(displayOffset(time_get_utc_offset(zone.toLatin1())));
 }
 
 QString ZonePickDialog::displayOffset(int offset)

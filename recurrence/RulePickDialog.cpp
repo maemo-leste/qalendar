@@ -76,7 +76,7 @@ void RulePickDialog::accept()
     // Export the list of rules
     rules.clear();
     for (int i = 0; i < ui->ruleList->count(); i++)
-        rules.push_back(ui->ruleList->item(i)->text().toAscii().data());
+        rules.push_back(ui->ruleList->item(i)->text().toLatin1().data());
 
     // Export the index of the current rule
     QList<QListWidgetItem*> selection = ui->ruleList->selectedItems();

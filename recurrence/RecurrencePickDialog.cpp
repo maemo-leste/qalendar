@@ -223,7 +223,7 @@ void RecurrencePickDialog::onLimitTypeChanged(int index)
 
 void RecurrencePickDialog::exportRule()
 {
-    rules[currentRule] = buildRule().toAscii().data();
+    rules[currentRule] = buildRule().toLatin1().data();
 }
 
 void RecurrencePickDialog::importRule()
@@ -310,7 +310,7 @@ QString RecurrencePickDialog::buildRule()
 void RecurrencePickDialog::accept()
 {
     // Update the current rule using data from the controls before saving
-    rules[currentRule] = buildRule().toAscii().data();
+    rules[currentRule] = buildRule().toLatin1().data();
 
     // It is impossible to remove rules from CRecurrence once they have been
     // added there. Put all the data into a new object instead.

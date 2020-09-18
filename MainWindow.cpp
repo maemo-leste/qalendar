@@ -311,7 +311,7 @@ void MainWindow::open_bday_event(uint, QString contactId)
     if (CCalendar *calendar = CMulticalendar::MCInstance()->getBirthdayCalendar()) {
         int error;
         launch_view(4, -1,
-                    calendar->getExternalToLocalId(string(contactId.toAscii()), true, error).c_str(),
+                    calendar->getExternalToLocalId(string(contactId.toLatin1()), true, error).c_str(),
                     calendar->getCalendarId());
         delete calendar;
     }

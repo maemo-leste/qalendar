@@ -242,7 +242,7 @@ INSTALLS += target desktop translations
 target.path = $$BINDIR
 
 desktop.path = $$DATADIR/applications/hildon
-desktop.files += ../extra/$${TARGET}.desktop
+desktop.files += extra/$${TARGET}.desktop
 
 for(TSFILE, TRANSLATIONS) {
     QMFILE = $$replace(TSFILE, ".ts", ".qm")
@@ -250,6 +250,11 @@ for(TSFILE, TRANSLATIONS) {
 }
 translations.CONFIG += no_check_exist
 translations.path = $$PKGDATADIR/translations
+
+INSTALLS += service
+service.path = $$PREFIX/share/dbus-1/services
+service.files += extra/com.nokia.calendar.service
+
 
 CONFIG += link_pkgconfig
 PKGCONFIG += calendar-backend gq-gconf libebook-1.2 libcityinfo0-0
