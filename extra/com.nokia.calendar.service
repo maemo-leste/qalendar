@@ -1,0 +1,5 @@
+# Service description file
+[D-BUS Service]
+Name=com.nokia.calendar
+Exec=/usr/bin/qalendar
+

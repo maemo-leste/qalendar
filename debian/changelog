@@ -1,0 +1,215 @@
+qalendar (1.0.0-1) unstable; urgency=low
+
+  * Initial Maemo Leste import
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sat, 19 Sep 2020 00:01:20 +0200
+
+qalendar (0.9.9-1) unstable; urgency=low
+
+  * New translations: Spanish by jmo707, Russian by uncle_night.
+  * Updated translations: Ukrainian (thanks to uncle_night), French, Dutch, Slovenian.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 30 Jul 2015 23:00:04 +0200
+
+qalendar (0.9.8-1) unstable; urgency=low
+
+  * Swipe left/right in the day window for next/previous day.
+  * Updated the German translation.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Tue, 24 Feb 2015 18:47:29 +0100
+
+qalendar (0.9.7-1) unstable; urgency=low
+
+  * Support for keyboard input in date and time pickers.
+  * Added a button to date and time pickers to select current date/time.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Fri, 20 Feb 2015 02:37:28 +0100
+
+qalendar (0.9.6-1) unstable; urgency=low
+
+  * Swipe left/right in the event window for next/previous event.
+  * New translation: Slovenian by sponka.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Wed, 18 Feb 2015 14:26:42 +0100
+
+qalendar (0.9.5-1) unstable; urgency=low
+
+  * Fixed a regression that prevented end time of events from being set properly.
+  * Updated the German translation.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 11 Sep 2014 14:58:45 +0200
+
+qalendar (0.9.4-1) unstable; urgency=low
+
+  * Tasks can be grouped by calendar.
+  * Support for time zones in component editors.
+  * Display component type and summary in deletion dialog.
+  * Birthdays can be cloned into an ordinary event.
+  * Remember alarm settings in the task editor.
+  * Do not change default settings when editing an existing component.
+  * Detect and react to time zone changes.
+  * Fixed wrong suggested alarm date when creating a task for current day.
+  * Ignore the seconds part of time that was present when creating an event without touching time pickers.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Tue, 09 Sep 2014 19:16:05 +0200
+
+qalendar (0.9.3-1) unstable; urgency=low
+
+  * Added a workaround for a Qt icon scaling bug which led to incorrect emblem sizes with some icon themes.
+  * Highlight current day in the month view even if it does not belong to the focused month.
+  * Top-aligned event description in the event window.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Sat, 21 Jun 2014 19:43:38 +0200
+
+qalendar (0.9.2-1) unstable; urgency=low
+
+  * Fixed a crash when creating birthdays from contacts with only a nickname.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 12 Jun 2014 22:28:29 +0200
+
+qalendar (0.9.1-1) unstable; urgency=low
+
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Sun, 18 May 2014 13:59:07 +0200
+
+qalendar (0.9-1) unstable; urgency=low
+
+  * Support for birthday calendar.
+  * Support for editing birthday alarms.
+  * Handle D-Bus requests to display birthday events.
+  * Append person's age to birthday events.
+  * Added options to change the first day of week for viewing and recurrence calculations.
+  * Unified alarm picker for all types of entries.
+  * Added context menu to event/task window and clone option to relevant context menus.
+  * Ability to clear default (irremovable) calendars.
+  * Prevent scrolling to the top when reloading various lists.
+  * Configurable date formats.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Sun, 20 Apr 2014 16:32:13 +0200
+
+qalendar (0.8-1) unstable; urgency=low
+
+  * Implemented importing of calendars through mime_open.
+  * Handle date change requests in launch_view.
+  * Error handling improvements in the calendar editor.
+  * Hide unnecessary buttons and change the title of the calendar editor when creating a new calendar.
+  * Translate special calendar names.
+  * Fixed disappearing components when moving them between calendars.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Tue, 05 Nov 2013 23:28:44 +0100
+
+qalendar (0.7.2-1) unstable; urgency=low
+
+  * Email addresses, phone numbers and web links in todo/event details can be clickable.
+  * Added clone action for events and todos.
+  * Invisible calendars in the calendar picker are grouped together and dimmed.
+  * Each update after this one will not require Qalenar in background mode to be restarted manually.
+  * New translation: German by deryo and tempura.san.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 17 Oct 2013 04:42:24 +0200
+
+qalendar (0.7.1-1) unstable; urgency=low
+
+  * Show recently edited notes first.
+  * New translation: Vietnamese by ppanhh.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 03 Oct 2013 15:52:10 +0200
+
+qalendar (0.7-1) unstable; urgency=low
+
+  * Support for editing multiple recurrence rules.
+  * Alarm tone can be changed in the settings (no previews yet).
+  * Overhaul of the note editor to work better with long text.
+  * Added a button to create tasks in the day view and the agenda view.
+  * Task editor preserves the due date offset if opened from the tasks view.
+  * Date change triggers a refresh and the date-based views can follow the current date.
+  * Support for D-Bus database change notifications.
+  * A task or an event to show can be received via D-Bus (makes the "View" button in reminders work properly).
+  * Highlight current date in the agenda view.
+  * Keyboard navigation in the agenda view starts on the day in focus.
+  * Fixed an offset in week boundaries that could initially appear in the week picker.
+  * Fixed a small memory leak in the recurrence editor.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Sun, 22 Sep 2013 16:14:48 +0200
+
+qalendar (0.6.2-1) unstable; urgency=low
+
+  * Show calendar type in event and task details.
+  * Scroll to and highlight the selected calendar when opening the calendar picker.
+  * Treat event end dates as non-inclusive, which fixes misinterpretation of some events as multi-day.
+  * Event time icons display only the starting time for zero-length events.
+  * Added a note that the time in the alarm picker is the amount of time before the event.
+  * Pop up a notice when trying to go to previous/next event and it is not possible.
+  * Fixed unexpected looping when trying to go the next event from the last existing event for the second time.
+  * Fixed outdated scroll hints and possible crash when no non-all-day events are present in the week view.
+  * Fixed zero-length events at midnight not appearing in the week view.
+  * Updated translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Sun, 08 Sep 2013 20:01:11 +0200
+
+qalendar (0.6.1-1) unstable; urgency=low
+
+  * If another instance of the application is detected on startup, activate that instance and exit.
+  * Replace line breaks with spaces when displaying text that is supposed to fit in one line.
+  * Gray out headings in the recurrence editor with the rest of the dialog.
+  * Updated the French translation.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Mon, 26 Aug 2013 19:25:46 +0200
+
+qalendar (0.6-1) unstable; urgency=low
+
+  * Scrolling hints in week view show also components from the all-day section.
+  * Enabled word wrapping for time labels in week view to make them work better with translations.
+  * Event lists display location info if available.
+  * Resolved the performance problem with refreshing of agenda view.
+  * Recurrence and alarm dialog always starts enabled to save one click.
+  * Recurrence dialog is grayed out instead of resized when disabled.
+  * Moved the checkbox in alarm dialog to the top of the dialog.
+  * Fixed misaligned weekday names in month view.
+  * Added an option to run in background and mimic some other related behaviors of the default Fremantle calendar.
+  * Updated translations.
+  * New translation: French by Pinky007.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 22 Aug 2013 05:50:17 +0200
+
+qalendar (0.5.2-1) unstable; urgency=low
+
+  * Locale is determined by device language instead of regional settings.
+  * Use locale settings to choose day-month order for the partial date format.
+  * Fixed a bug that prevented zero-length events from being displayed in the week view under some circumstances.
+  * Fixed too narrow text wrapping boundary in description fields.
+  * Corrected wrong form of month and weekday names.
+  * New translations:
+    - Finnish by jonkha,
+    - Italian by Rakom,
+    - Dutch by ade,
+    - Polish,
+    - Ukrainian by int_ua.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Tue, 20 Aug 2013 02:57:07 +0200
+
+qalendar (0.5.1-1) unstable; urgency=low
+
+  * Added keyboard shortcuts to jump between years in the month view (Left/Right).
+  * Fixed week item in the menu not being toggled when activating the week view using month view's week button.
+  * Support for translations.
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Thu, 01 Aug 2013 19:32:10 +0200
+
+qalendar (0.5-2) unstable; urgency=low
+
+  * Fixed wrong category in the packaging
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Wed, 24 Jul 2013 15:26:03 +0200
+
+qalendar (0.5-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Grzegorz Gidel <grg.gdl@gmail.com>  Mon, 22 Jul 2013 23:34:15 +0200

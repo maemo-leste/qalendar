@@ -1,0 +1,70 @@
+Source: qalendar
+Section: user/office
+Priority: extra
+Maintainer: Merlijn Wajer <merlijn@wizzup.org>
+Build-Depends: debhelper (>= 10),
+    qtbase5-dev,
+    qt5-default,
+    libqt5maemo5-dev,
+    libqt5x11extras5-dev,
+    libtime-dev,
+    calendar-backend-dev,
+    libgq-gconf-dev,
+    libebook1.2-dev,
+    libcityinfo-dev
+Standards-Version: 3.8.4
+Homepage: http://talk.maemo.org/showthread.php?t=90820
+
+Package: qalendar
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: An open source clone of the default Maemo calendar application
+XSBC-Maemo-Display-Name: Qalendar
+XB-Maemo-Icon-26:
+ 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
+ /BeWU8Yi1/DusQAAAABJRU5ErkJggg==
+ ====
