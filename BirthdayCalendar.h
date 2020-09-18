@@ -4,7 +4,7 @@
 #include <CCalendar.h>
 #include <CBdayEvent.h>
 
-#include <libebook/e-book.h>
+#include <libebook/libebook.h>
 
 class BirthdayCalendar
 {

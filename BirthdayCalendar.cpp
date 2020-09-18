@@ -18,13 +18,39 @@
 // background mode is enabled, so the application is initially hidden and the
 // startup time cannot be easily observed.
 
+static EBook *
+gl_open_system_addressbook (GError **error)
+{
+   ESourceRegistry *registry;
+   EBook *book = NULL;
+   ESource *source;
+
+   registry = e_source_registry_new_sync (NULL, error);
+   if (!registry)
+       return NULL;
+
+   source = e_source_registry_ref_builtin_address_book (registry);
+   if (!source) {
+       g_object_unref (registry);
+       return NULL;
+   }
+
+   book = e_book_new (source, error);
+
+   g_object_unref (source);
+   g_object_unref (registry);
+
+   return book;
+}
+
 BirthdayCalendar::BirthdayCalendar(CCalendar *calendar) :
     calendar(calendar),
     bookView(NULL),
     initialized(false)
 {
     // Obtain the book
-    book = e_book_new_system_addressbook(NULL);
+    book = gl_open_system_addressbook(NULL);
+    //book = e_book_new_system_addressbook(NULL);
     if (!book) return;
 
     // Open the book to allow further operations
