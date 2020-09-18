@@ -22,7 +22,7 @@ JournalsPlug::JournalsPlug(QWidget *parent) :
 
     ui->journalList->setItemDelegate(new JournalDelegate(ui->journalList));
 
-    this->setAttribute(Qt::WA_Maemo5StackedWindow);
+    this->setProperty("X-Maemo-StackedWindow", 1);
 
     // Create a button to add new notes
     QPushButton *newJournalButton = new QPushButton(QIcon::fromTheme("general_add"), tr("New note"));

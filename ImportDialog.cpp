@@ -82,7 +82,8 @@ void ImportDialog::closeEvent(QCloseEvent *e)
 void ImportDialog::infoStart()
 {
     // Indicate busyness
-    this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, true);
+    //this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, true);
+    this->setProperty("X-Maemo-Progress", 1);
     QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
 
     infoStep();
@@ -115,7 +116,8 @@ void ImportDialog::infoStep()
 
         if (endOfFile) {
             // Loading complete
-            this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, false);
+            //this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, false);
+	    this->setProperty("X-Maemo-Progress", 0);
             this->setEnabled(true);
         } else {
             // Another pass required
@@ -150,7 +152,8 @@ void ImportDialog::importStart()
         }
 
         // Indicate busyness
-        this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, true);
+        //this->setAttribute(Qt::WA_Maemo5ShowProgressIndicator, true);
+        this->setProperty("X-Maemo-Progress", 1);
         this->setEnabled(false);
         QApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
 

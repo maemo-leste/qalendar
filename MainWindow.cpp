@@ -18,7 +18,8 @@
 MainWindow::MainWindow(bool runInBackground) :
     runInBackground(runInBackground)
 {
-    this->setAttribute(Qt::WA_Maemo5StackedWindow);
+    //this->setAttribute(Qt::WA_Maemo5StackedWindow);
+    this->setProperty("X-Maemo-StackedWindow", 1);
 
     deleteOldComponents();
 

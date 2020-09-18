@@ -26,11 +26,13 @@ DayWindow::DayWindow(QDate date, QWidget *parent) :
     ui->setupUi(this);
 
     this->setAttribute(Qt::WA_DeleteOnClose);
-    this->setAttribute(Qt::WA_Maemo5StackedWindow);
+    //this->setAttribute(Qt::WA_Maemo5StackedWindow);
+    this->setProperty("X-Maemo-StackedWindow", 1);
 
-    this->setAttribute(Qt::WA_Maemo5AutoOrientation, true);
-    this->setAttribute(Qt::WA_Maemo5LandscapeOrientation, false);
-    this->setAttribute(Qt::WA_Maemo5PortraitOrientation, false);
+    this->setProperty("X-Maemo-Orientation", 2);
+    //this->setAttribute(Qt::WA_Maemo5AutoOrientation, true);
+    //this->setAttribute(Qt::WA_Maemo5LandscapeOrientation, false);
+    //this->setAttribute(Qt::WA_Maemo5PortraitOrientation, false);
 
     NewComponentWidget *ncw = new NewComponentWidget();
     QListWidgetItem *item = new QListWidgetItem(ui->componentList);
