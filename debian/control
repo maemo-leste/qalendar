@@ -12,8 +12,11 @@ Build-Depends: debhelper (>= 10),
     libgq-gconf-dev,
     libebook1.2-dev,
     libcityinfo-dev
-Standards-Version: 3.8.4
-Homepage: http://talk.maemo.org/showthread.php?t=90820
+Standards-Version: 4.3.0
+Homepage: https://github.com/maemo-leste/qalendar
+XSBC-Bugtracker: https://github.com/maemo-leste/qalendar/issues
+Vcs-Git: https://github.com/maemo-leste/qalendar
+Vcs-Browser: https://github.com/maemo-leste/qalendar
 
 Package: qalendar
 Architecture: any
