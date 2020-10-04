@@ -4,7 +4,7 @@
 #include <QDate>
 #include <QMaemo5Style>
 
-//#include <QAbstractKineticScroller>
+#include <QScroller>
 #include <QScrollArea>
 #include <QScrollBar>
 
@@ -59,6 +59,8 @@ void WeekWidget::setDate(QDate date)
 
 void WeekWidget::cleanup()
 {
+    QScroller::ungrabGesture(this->parentWidget()->parentWidget());
+
     for (unsigned int i = 0; i < instances.size(); i++)
         delete instances[i];
     instances.clear();
@@ -151,6 +153,8 @@ void WeekWidget::reload()
     this->setFixedHeight(sizeHint().height());
 
     this->update();
+
+    QScroller::grabGesture(this->parentWidget()->parentWidget(), QScroller::LeftMouseButtonGesture);
 }
 
 void WeekWidget::populateAllDay()
@@ -444,14 +448,6 @@ void WeekWidget::mouseReleaseEvent(QMouseEvent *e)
                                             + currentTime.minute() * CellHeight / 60
                                             - scrollArea->viewport()->height() / 2;
 
-                // Scroll to the position which is further away
-#if 0
-                scrollArea->property("kineticScroller").value<QAbstractKineticScroller*>()
-                          ->scrollTo(QPoint(0, qBound(0, qAbs(scrollPosition-allDayPosition) > qAbs(scrollPosition-currentTimePosition)
-                                                      ? allDayPosition
-                                                      : currentTimePosition,
-                                                      scrollBar->maximum())));
-#endif
             }
         }
     }
