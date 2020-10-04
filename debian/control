@@ -23,7 +23,8 @@ Package: qalendar
 Architecture: any
 Depends: ${shlibs:Depends},
     ${misc:Depends},
-    libgq-gconf0
+    libgq-gconf0,
+    qt-platform-maemo,
 Description: An open source clone of the default Maemo calendar application
 XSBC-Maemo-Display-Name: Qalendar
 XB-Maemo-Icon-26:
