@@ -21,7 +21,9 @@ Vcs-Browser: https://github.com/maemo-leste/qalendar
 
 Package: qalendar
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends},
+    ${misc:Depends},
+    libgq-gconf0
 Description: An open source clone of the default Maemo calendar application
 XSBC-Maemo-Display-Name: Qalendar
 XB-Maemo-Icon-26:
