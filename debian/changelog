@@ -1,3 +1,9 @@
+qalendar (1.0.1-1) unstable; urgency=low
+
+  * Support scrolling in various widgets and dialogs
+
+ -- Merlijn Wajer <merlijn@wizzup.org>  Sun, 04 Oct 2020 14:14:43 +0200
+
 qalendar (1.0.0-1) unstable; urgency=low
 
   * Initial Maemo Leste import
