@@ -2,6 +2,6 @@
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Name=Qalendar
+Name=Calendar
 Icon=general_calendar
 Exec=qalendar

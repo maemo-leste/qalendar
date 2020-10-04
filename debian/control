@@ -26,7 +26,7 @@ Depends: ${shlibs:Depends},
     libgq-gconf0,
     qt-platform-maemo,
 Description: An open source clone of the default Maemo calendar application
-XSBC-Maemo-Display-Name: Qalendar
+XSBC-Maemo-Display-Name: Calendar
 XB-Maemo-Icon-26:
  iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAHxklEQVRo3u1Z
  fUxb1xX/nWf7+b1aUBscChmOQ0v4MB/5Im3XhKSMRAlKpbVbI1Wt9pEpheGO
