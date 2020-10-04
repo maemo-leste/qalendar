@@ -142,6 +142,7 @@ TodoEditDialog::TodoEditDialog(QWidget *parent, CTodo *todo) :
 
 TodoEditDialog::~TodoEditDialog()
 {
+    QScroller::scroller(ui->editArea)->stop();
     QScroller::ungrabGesture(ui->editArea);
     delete todo;
 

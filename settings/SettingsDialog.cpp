@@ -56,6 +56,7 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
 
 SettingsDialog::~SettingsDialog()
 {
+    QScroller::scroller(ui->mainArea)->stop();
     QScroller::ungrabGesture(ui->mainArea);
     delete ui;
 }

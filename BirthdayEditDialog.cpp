@@ -43,6 +43,7 @@ BirthdayEditDialog::BirthdayEditDialog(QWidget *parent, CBdayEvent *event) :
 
 BirthdayEditDialog::~BirthdayEditDialog()
 {
+    QScroller::scroller(this)->stop();
     QScroller::ungrabGesture(this);
     delete event;
 

@@ -60,6 +60,7 @@ JournalEditDialog::JournalEditDialog(QWidget *parent, CJournal *journal) :
 
 JournalEditDialog::~JournalEditDialog()
 {
+    QScroller::scroller(ui->mainArea)->stop();
     QScroller::ungrabGesture(ui->mainArea);
     delete journal;
 

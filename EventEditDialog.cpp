@@ -178,6 +178,7 @@ EventEditDialog::EventEditDialog(QWidget *parent, CEvent *event) :
 
 EventEditDialog::~EventEditDialog()
 {
+    QScroller::scroller(ui->mainArea)->stop();
     QScroller::ungrabGesture(ui->mainArea);
     delete event;
 
