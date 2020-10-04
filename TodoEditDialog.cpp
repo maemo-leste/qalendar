@@ -15,6 +15,8 @@
 #include "ChangeManager.h"
 #include "Date.h"
 
+#include <QScroller>
+
 TodoEditDialog::TodoEditDialog(QWidget *parent, CTodo *todo) :
     ComponentEditDialog(parent),
     ui(new Ui::TodoEditDialog),
@@ -129,6 +131,8 @@ TodoEditDialog::TodoEditDialog(QWidget *parent, CTodo *todo) :
 
     this->setupSaveButton(ui->buttonBox, SLOT(saveTodo()));
 
+    QScroller::grabGesture(ui->editArea, QScroller::LeftMouseButtonGesture);
+
     ui->editArea->widget()->layout()->activate();
 
     this->setFeatures(ui->dialogLayout, ui->buttonBox);
@@ -138,6 +142,7 @@ TodoEditDialog::TodoEditDialog(QWidget *parent, CTodo *todo) :
 
 TodoEditDialog::~TodoEditDialog()
 {
+    QScroller::ungrabGesture(ui->editArea);
     delete todo;
 
     delete ui;

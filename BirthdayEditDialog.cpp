@@ -6,6 +6,8 @@
 
 #include "ChangeManager.h"
 
+#include <QScroller>
+
 BirthdayEditDialog::BirthdayEditDialog(QWidget *parent, CBdayEvent *event) :
     ComponentEditDialog(parent),
     ui(new Ui::BirthdayEditDialog)
@@ -32,6 +34,8 @@ BirthdayEditDialog::BirthdayEditDialog(QWidget *parent, CBdayEvent *event) :
 
     this->setupSaveButton(ui->buttonBox, SLOT(saveEvent()));
 
+    QScroller::grabGesture(this, QScroller::LeftMouseButtonGesture);
+
     this->setFeatures(ui->dialogLayout, ui->buttonBox);
 
     this->event = event;
@@ -39,6 +43,7 @@ BirthdayEditDialog::BirthdayEditDialog(QWidget *parent, CBdayEvent *event) :
 
 BirthdayEditDialog::~BirthdayEditDialog()
 {
+    QScroller::ungrabGesture(this);
     delete event;
 
     delete ui;

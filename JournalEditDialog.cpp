@@ -9,6 +9,8 @@
 
 #include "ChangeManager.h"
 
+#include <QScroller>
+
 JournalEditDialog::JournalEditDialog(QWidget *parent, CJournal *journal) :
     ComponentEditDialog(parent),
     ui(new Ui::JournalEditDialog)
@@ -49,6 +51,7 @@ JournalEditDialog::JournalEditDialog(QWidget *parent, CJournal *journal) :
     this->setMinimumHeight(800);
 
     this->setupSaveButton(ui->buttonBox, SLOT(saveJournal()));
+    QScroller::grabGesture(ui->mainArea, QScroller::LeftMouseButtonGesture);
 
     this->setFeatures(ui->dialogLayout, ui->buttonBox);
 
@@ -57,6 +60,7 @@ JournalEditDialog::JournalEditDialog(QWidget *parent, CJournal *journal) :
 
 JournalEditDialog::~JournalEditDialog()
 {
+    QScroller::ungrabGesture(ui->mainArea);
     delete journal;
 
     delete ui;

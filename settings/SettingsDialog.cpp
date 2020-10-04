@@ -2,6 +2,7 @@
 
 #include <QStandardItemModel>
 #include <QSettings>
+#include <QScroller>
 
 #include <GConfItem>
 
@@ -49,11 +50,13 @@ SettingsDialog::SettingsDialog(QWidget *parent) :
     connect(ui->dateFormatButton, SIGNAL(clicked()), this, SLOT(openDateFormatDialog()));
     connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(saveSettings()));
 
+    QScroller::grabGesture(ui->mainArea, QScroller::LeftMouseButtonGesture);
     this->setFeatures(ui->dialogLayout, ui->buttonBox);
 }
 
 SettingsDialog::~SettingsDialog()
 {
+    QScroller::ungrabGesture(ui->mainArea);
     delete ui;
 }
 

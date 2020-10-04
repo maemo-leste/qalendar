@@ -18,6 +18,8 @@
 #include "ChangeManager.h"
 #include "Date.h"
 
+#include <QScroller>
+
 EventEditDialog::EventEditDialog(QWidget *parent, CEvent *event) :
     ComponentEditDialog(parent),
     ui(new Ui::EventEditDialog)
@@ -165,6 +167,7 @@ EventEditDialog::EventEditDialog(QWidget *parent, CEvent *event) :
     }
 
     this->setupSaveButton(ui->buttonBox, SLOT(saveEvent()));
+    QScroller::grabGesture(ui->mainArea, QScroller::LeftMouseButtonGesture);
 
     ui->mainArea->widget()->layout()->activate();
 
@@ -175,6 +178,7 @@ EventEditDialog::EventEditDialog(QWidget *parent, CEvent *event) :
 
 EventEditDialog::~EventEditDialog()
 {
+    QScroller::ungrabGesture(ui->mainArea);
     delete event;
 
     delete ui;
