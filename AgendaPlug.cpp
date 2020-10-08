@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QAction>
 #include <QScrollBar>
+#include <QScroller>
 
 #include <CMulticalendar.h>
 #include "CWrapper.h"
@@ -35,10 +36,14 @@ AgendaPlug::AgendaPlug(QDate date, QWidget *parent) :
     connect(todayAction, SIGNAL(triggered()), this, SLOT(gotoToday()));
     connect(jumpAction, SIGNAL(triggered()), this, SLOT(selectDay()));
     connect(eventAction, SIGNAL(triggered()), ui->componentList, SLOT(newEvent()));
+
+    QScroller::grabGesture(ui->componentList, QScroller::LeftMouseButtonGesture);
 }
 
 AgendaPlug::~AgendaPlug()
 {
+    QScroller::scroller(ui->componentList)->stop();
+    QScroller::ungrabGesture(ui->componentList);
     cleanup();
 }
 

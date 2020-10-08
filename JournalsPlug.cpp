@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QDateTime>
 #include <QScrollBar>
+#include <QScroller>
 
 #include <CMulticalendar.h>
 #include <CJournal.h>
@@ -32,10 +33,14 @@ JournalsPlug::JournalsPlug(QWidget *parent) :
     connect(newJournalButton, SIGNAL(clicked()), this, SLOT(onJournalActivated()));
     connect(ui->journalList, SIGNAL(itemActivated(QListWidgetItem*)), this, SLOT(onJournalActivated(QListWidgetItem*)));
     connect(ui->journalList, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(onContextMenuRequested(QPoint)));
+
+    QScroller::grabGesture(ui->journalList, QScroller::LeftMouseButtonGesture);
 }
 
 JournalsPlug::~JournalsPlug()
 {
+    QScroller::scroller(ui->journalList)->stop();
+    QScroller::ungrabGesture(ui->journalList);
     for (int i = 1; i < ui->journalList->count(); i++)
         delete qvariant_cast<CJournal*>(ui->journalList->item(i)->data(JournalRole));
 

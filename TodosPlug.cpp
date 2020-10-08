@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QScrollBar>
+#include <QScroller>
 
 #include <QDateTime>
 #include <QSettings>
@@ -57,10 +58,14 @@ TodosPlug::TodosPlug(QWidget *parent) :
     connect(ui->todoList, SIGNAL(itemActivated(QListWidgetItem*)), this, SLOT(onTodoActivated(QListWidgetItem*)));
     connect(ui->todoList, SIGNAL(itemChanged(QListWidgetItem*)), this, SLOT(onTodoChanged(QListWidgetItem*)));
     connect(ui->todoList, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(onContextMenuRequested(QPoint)));
+
+    QScroller::grabGesture(ui->todoList, QScroller::LeftMouseButtonGesture);
 }
 
 TodosPlug::~TodosPlug()
 {
+    QScroller::scroller(ui->todoList)->stop();
+    QScroller::ungrabGesture(ui->todoList);
     for (int i = 1; i < ui->todoList->count(); i++)
         delete qvariant_cast<CTodo*>(ui->todoList->item(i)->data(TodoRole));
 
