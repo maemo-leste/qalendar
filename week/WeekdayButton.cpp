@@ -38,11 +38,10 @@ void WeekdayButton::paintEvent(QPaintEvent *)
     bool currentDay = date == QDate::currentDate();
 
     // Draw the background
-    painter.drawPixmap(0, 0, QPixmap(this->isDown()
-                                   ? PIX_WEEKDAY_PRESSED
-                                   : (currentDay
-                                    ? PIX_WEEKDAY_CURRENT
-                                    : PIX_WEEKDAY)));
+    QPixmap pix = QPixmap(this->isDown() ? PIX_WEEKDAY_PRESSED
+                           : (currentDay ? PIX_WEEKDAY_CURRENT : PIX_WEEKDAY));
+    pix = pix.scaled(QSize(this->width(), this->height()));
+    painter.drawPixmap(0, 0, pix);
 
     if (currentDay)
         painter.setPen(QMaemo5Style::standardColor("ReversedTextColor"));
