@@ -127,6 +127,9 @@ void MonthPlug::setDate(QDate date)
     if (background.isNull())
         background = QPixmap(filename, "png");
 
+    if (!background.isNull())
+        background = background.scaled(QSize(this->width(), this->height()));
+
     this->update();
 
     emit titleChanged(title());
