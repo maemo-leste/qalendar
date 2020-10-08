@@ -1,10 +1,16 @@
 #include "WeekdayButton.h"
 
+#include <cmath>
+
 #include <QPixmap>
 #include <QPainter>
 #include <QMaemo5Style>
 
+#include <QGuiApplication>
+#include <QScreen>
+
 #include "DayWindow.h"
+#include "WeekWidget.h"
 
 #include "Date.h"
 #include "Theme.h"
@@ -22,7 +28,13 @@ WeekdayButton::WeekdayButton(QWidget *parent) :
 
 QSize WeekdayButton::sizeHint() const
 {
-    return QSize(104, 56);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect  screenGeometry = screen->geometry();
+    int width = screenGeometry.width() - Metrics::WeekWidget::TimeWidth - (Metrics::WeekWidget::NumWeekdays*Metrics::WeekWidget::SpacingWidth);
+
+    int butwidth = std::lround(width/((double)Metrics::WeekWidget::NumWeekdays));
+
+    return QSize(butwidth, 56);
 }
 
 void WeekdayButton::setDate(QDate date)
