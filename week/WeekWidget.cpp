@@ -1,5 +1,7 @@
 #include "WeekWidget.h"
 
+#include <cmath>
+
 #include <QPainter>
 #include <QDate>
 #include <QMaemo5Style>
@@ -7,6 +9,9 @@
 #include <QScroller>
 #include <QScrollArea>
 #include <QScrollBar>
+
+#include <QGuiApplication>
+#include <QScreen>
 
 #include <CMulticalendar.h>
 #include "CWrapper.h"
@@ -29,11 +34,8 @@ using namespace Metrics::WeekWidget;
 using namespace Metrics::WeekProfile;
 using namespace Metrics::ComponentWidget;
 
-const int NumHours = 24;
-const int CellWidth  = 101;
-const int CellHeight = 68;
-const int SpacingHeight = 2;
-const int SpacingWidth  = 3;
+int CellWidth  = 101;
+int CellHeight = 68;
 
 WeekWidget::WeekWidget(QWidget *parent) :
     GestureWidget(parent),
@@ -48,7 +50,22 @@ WeekWidget::~WeekWidget()
 
 QSize WeekWidget::sizeHint() const
 {
-    return QSize(TimeWidth + (CellWidth + SpacingWidth) * NumWeekdays, (CellHeight + SpacingHeight) * NumHours + allDayRowHeight() + SpacingHeight);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect  screenGeometry = screen->geometry();
+    // TODO: 4 and 5 are Margins from ComponentWidget.cpp
+    int width = screenGeometry.width() - 4 - 5;
+
+    CellWidth = std::lround((width - TimeWidth - (NumDays * (SpacingWidth+1))) / ((double)NumDays));
+
+    return QSize(width,
+                 (CellHeight + SpacingHeight) * NumHours + allDayRowHeight() + SpacingHeight);
+}
+
+void WeekWidget::resizeEvent(QResizeEvent *event) {
+    // TODO: Stub at the moment, use this to resize and redraw (for portrait
+    // mode)
+    (void)event;
+    QSize s = this->size();
 }
 
 void WeekWidget::setDate(QDate date)

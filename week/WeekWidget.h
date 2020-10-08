@@ -23,6 +23,10 @@ namespace Metrics
     {
         const int NumWeekdays = 7;
         const int TimeWidth = 62;
+        const int NumHours = 24;
+        const int NumDays = 7;
+        const int SpacingHeight = 2;
+        const int SpacingWidth  = 3;
     }
 }
 
@@ -46,6 +50,8 @@ public:
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
     void mouseMoveEvent(QMouseEvent *e);
+
+    void resizeEvent(QResizeEvent *e);
 
 private:
     QDate date;
