@@ -46,7 +46,7 @@ MonthPlug::MonthPlug(QDate date, QWidget *parent) :
     for (int i = 0; i < NumWeekdays; i++) {
         QLabel *dayLabel = new QLabel();
         dayLabel->setAlignment(Qt::AlignCenter);
-        dayLabel->setFixedWidth(CellWidth);
+        dayLabel->setFixedWidth(monthWidget->CellWidth);
         dayLabel->setFont(font);
         dayLayout->addWidget(dayLabel);
     }

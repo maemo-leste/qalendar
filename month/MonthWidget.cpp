@@ -1,13 +1,19 @@
 #include "MonthWidget.h"
 
+#include <cmath>
+
 #include <QPainter>
 #include <QDate>
 #include <QMaemo5Style>
+
+#include <QGuiApplication>
+#include <QScreen>
 
 #include <CMulticalendar.h>
 #include "CWrapper.h"
 
 #include "MonthLayoutWindow.h"
+#include "WeekButton.h"
 
 #include "DayWindow.h"
 
@@ -26,6 +32,14 @@ MonthWidget::MonthWidget(QDate date, QWidget *parent) :
     date(date)
 {
     this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect  screenGeometry = screen->geometry();
+    int width = screenGeometry.width();
+    int height = screenGeometry.height();
+
+    this->CellWidth = std::lround((width - Metrics::WeekButton::Width) / ((double)NumWeekdays));
+    this->CellHeight = std::lround((height) / ((double)NumWeeks));
 
     if (date.isValid())
         reload();
@@ -126,6 +140,12 @@ QPixmap MonthWidget::render()
     QPixmap pixDayDimmed(PIX_MONTH_DIMMED);
     QPixmap pixDay(PIX_MONTH);
     QPixmap pixDayPressed(PIX_MONTH_PRESSED);
+
+    // Scale pixmaps
+    pixDayCurrent = pixDayCurrent.scaled(QSize(CellWidth, CellHeight));
+    pixDayDimmed = pixDayDimmed.scaled(QSize(CellWidth, CellHeight));
+    pixDay = pixDay.scaled(QSize(CellWidth, CellHeight));
+    pixDayPressed = pixDayPressed.scaled(QSize(CellWidth, CellHeight));
 
     // Prepare colors
     QColor textColor = QMaemo5Style::standardColor("DefaultTextColor");

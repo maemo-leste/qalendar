@@ -1,14 +1,19 @@
 #include "WeekButton.h"
 
+#include <cmath>
+
 #include <QPixmap>
 #include <QPainter>
+
+#include <QGuiApplication>
+#include <QScreen>
 
 #include "Date.h"
 
 #include "Theme.h"
 #include "MonthWidget.h"
 
-const int Width = 74;
+using namespace Metrics::WeekButton;
 
 WeekButton::WeekButton(QWidget *parent) :
     QAbstractButton(parent)
@@ -18,12 +23,14 @@ WeekButton::WeekButton(QWidget *parent) :
     font.setPointSize(13);
     this->setFont(font);
 
+    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+
     connect(this, SIGNAL(clicked()), this, SLOT(onClicked()));
 }
 
 QSize WeekButton::sizeHint() const
 {
-    return QSize(Width, Metrics::MonthWidget::CellHeight);
+    return QSize(Width, -1);
 }
 
 void WeekButton::setDate(QDate date)
@@ -37,7 +44,9 @@ void WeekButton::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
 
-    painter.drawPixmap(0, 0, this->isDown() ? QPixmap(PIX_MONTH_WEEK_PRESSED) : QPixmap(PIX_MONTH_WEEK));
+    QPixmap pix = this->isDown() ? QPixmap(PIX_MONTH_WEEK_PRESSED) : QPixmap(PIX_MONTH_WEEK);
+    pix = pix.scaled(QSize(this->width(), this->height()));
+    painter.drawPixmap(0, 0, pix);
 
     painter.drawText(0, 0, this->width(), this->height(), Qt::AlignHCenter|Qt::AlignVCenter, this->text());
 }

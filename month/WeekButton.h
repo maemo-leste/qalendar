@@ -8,6 +8,12 @@
 
 #include <QDate>
 
+namespace Metrics {
+    namespace WeekButton {
+        const int Width = 74;
+    }
+};
+
 class WeekButton : public QAbstractButton
 {
     Q_OBJECT

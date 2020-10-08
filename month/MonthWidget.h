@@ -19,8 +19,6 @@ namespace Metrics
 {
     namespace MonthWidget
     {
-        const int CellWidth  = 102;
-        const int CellHeight = 66;
         const int NumWeeks = 6;
         const int NumWeekdays = 7;
     }
@@ -36,6 +34,9 @@ public:
     void setDate(QDate date);
     QDate firstDate();
     QDate lastDate();
+
+    int CellWidth = 102;
+    int CellHeight = 66;
 
 private:
     QDate date;
