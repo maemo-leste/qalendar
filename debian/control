@@ -25,6 +25,7 @@ Depends: ${shlibs:Depends},
     ${misc:Depends},
     libgq-gconf0,
     qt-platform-maemo,
+    calendar-l10n-mr0,
 Description: An open source clone of the default Maemo calendar application
 XSBC-Maemo-Display-Name: Calendar
 XB-Maemo-Icon-26:
