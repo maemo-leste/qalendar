@@ -35,6 +35,13 @@ MonthPlug::MonthPlug(QDate date, QWidget *parent) :
     // Add week buttons
     for (int i = 0; i < NumWeeks; i++) {
         WeekButton *weekButton = new WeekButton(this);
+
+        if (i == NumWeeks - 1) { // last item shall expand
+            weekButton->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        } else {
+            weekButton->setFixedHeight(monthWidget->CellHeight);
+        }
+
         connect(weekButton, SIGNAL(clicked(QDate)), this, SLOT(onWeekClicked(QDate)));
         weekLayout->addWidget(weekButton);
     }
@@ -113,8 +120,10 @@ void MonthPlug::setDate(QDate date)
     QDate weekProbe = monthWidget->firstDate();
     for (int i = 0; i < weekLayout->count(); i++) {
         WeekButton *button = qobject_cast<WeekButton*>(weekLayout->itemAt(i)->widget());
-        button->setDate(weekProbe);
-        weekProbe = weekProbe.addDays(7);
+        if (button) {
+            button->setDate(weekProbe);
+            weekProbe = weekProbe.addDays(7);
+        }
     }
 
     // Set the appropriate background

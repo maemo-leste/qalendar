@@ -23,7 +23,7 @@ WeekButton::WeekButton(QWidget *parent) :
     font.setPointSize(13);
     this->setFont(font);
 
-    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
+    this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     connect(this, SIGNAL(clicked()), this, SLOT(onClicked()));
 }
